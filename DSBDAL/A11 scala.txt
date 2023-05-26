@@ -1,0 +1,23 @@
+object Calculator {
+  def main(args: Array[String]): Unit = {
+    println("Select operation (+, -, *, /, %): ")
+    val operation: Char = scala.io.StdIn.readChar()
+
+    println("Enter number 1: ")
+    val number1: Int = scala.io.StdIn.readInt()
+
+    println("Enter number 2: ")
+    val number2: Int = scala.io.StdIn.readInt()
+
+    val result: Int = operation match {
+      case '+' => number1 + number2
+      case '-' => number1 - number2
+      case '*' => number1 * number2
+      case '/' => number1 / number2
+      case '%' => number1 % number2
+      case _   => throw new IllegalArgumentException("Invalid operation")
+    }
+
+    println("Result is " + result)
+  }
+}
